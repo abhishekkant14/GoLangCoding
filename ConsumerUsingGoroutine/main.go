@@ -6,7 +6,7 @@ func producer(ch chan int) {
 
 	for i := 1; i <= 5; i++ {
 
-		ch <- 1
+		ch <- i
 	}
 	close(ch)
 }
