@@ -4,20 +4,22 @@ import "fmt"
 
 func main() {
 
-	num := []int{1, 2, 33, 56, 76, 35}
+	num := []int{2, 3, 4, 5, 66, 43, 54, 67, 54}
 
 	LargestNum := num[0]
-	SecondNum := num[0]
+	SecondLargest := num[0]
 
 	for _, value := range num {
 
 		if value > LargestNum {
-			SecondNum = LargestNum
+			SecondLargest = LargestNum
 			LargestNum = value
-		} else if value > SecondNum && value != LargestNum {
-			SecondNum = value
+		} else if value > SecondLargest {
+			SecondLargest = value
 		}
 	}
-	fmt.Println("Largest", LargestNum)
-	fmt.Println("SecondNum", SecondNum)
+
+	fmt.Println("LargestNum", LargestNum)
+	fmt.Println("SecondNum", SecondLargest)
+
 }
