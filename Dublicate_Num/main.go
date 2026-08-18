@@ -6,16 +6,18 @@ import (
 
 func main() {
 
-	nums := []int{1, 2, 3, 4, 7, 3, 6, 8, 9, 1, 2, 4}
+	nums := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 9, 4}
 
 	seen := make(map[int]bool)
 
-	for _, num := range nums {
-		if seen[num] {
-			fmt.Println("Dublicate", num)
-		} else {
-			seen[num] = true
-		}
-	}
+	for _, value := range nums {
 
+		if seen[value] {
+			fmt.Println("Nums", value)
+
+		} else {
+			seen[value] = true
+		}
+
+	}
 }

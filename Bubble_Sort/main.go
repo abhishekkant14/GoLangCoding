@@ -1,8 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func BubbleNum(arr []int) {
+func BubbleSort(arr []int) {
 
 	for i := 0; i < len(arr)-1; i++ {
 		for j := 0; j < len(arr)-1; j++ {
@@ -16,12 +18,12 @@ func BubbleNum(arr []int) {
 
 func main() {
 
-	num := []int{9, 6, 3, 8, 2, 7, 3, 2, 1, 4, 5}
+	arr := []int{6, 5, 3, 2, 3, 1, 4, 7}
 
-	fmt.Println("ExistNum", num)
+	fmt.Println("Orignal Arr", arr)
 
-	BubbleNum(num)
+	BubbleSort(arr)
 
-	fmt.Println("Sorted arr", num)
+	fmt.Println("Sorted", arr)
 
 }
