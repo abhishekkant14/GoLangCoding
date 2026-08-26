@@ -6,18 +6,21 @@ import (
 
 func main() {
 
-	nums := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 9, 4}
+	nums := []int{2, 3, 4, 5, 2, 5, 7, 6, 8, 9}
 
 	seen := make(map[int]bool)
 
 	for _, value := range nums {
-
 		if seen[value] {
-			fmt.Println("Nums", value)
+
+			fmt.Println("Number", value)
 
 		} else {
+
 			seen[value] = true
+
 		}
 
 	}
+
 }
