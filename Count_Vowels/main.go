@@ -15,13 +15,14 @@ func CountVowels(str string) int {
 			ch == 'O' || ch == 'U' {
 			count++
 		}
-
 	}
 	return count
 
 }
+
 func main() {
 
 	fmt.Println(CountVowels("Abhishek"))
-	fmt.Println(CountVowels("Atulesh"))
+	fmt.Println(CountVowels("Atulesh kant"))
+
 }
