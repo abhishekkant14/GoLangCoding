@@ -1,29 +1,27 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func BubbleSort(arr []int) {
+func Bubble_Sort(arr []int) {
 
 	for i := 0; i < len(arr)-1; i++ {
 		for j := 0; j < len(arr)-1; j++ {
 			if arr[j] > arr[j+1] {
+
 				arr[j], arr[j+1] = arr[j+1], arr[j]
 			}
 		}
 	}
-
 }
 
 func main() {
 
-	arr := []int{6, 5, 3, 2, 3, 1, 4, 7}
+	arr := []int{4, 2, 3, 4, 5, 6, 7, 8, 9}
 
-	fmt.Println("Orignal Arr", arr)
+	fmt.Println("Un_Sorted", arr)
 
-	BubbleSort(arr)
+	Bubble_Sort(arr)
 
-	fmt.Println("Sorted", arr)
+	fmt.Println("Sorted_arr", arr)
 
 }
