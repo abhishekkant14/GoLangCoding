@@ -1,33 +1,54 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+	"time"
+)
 
-func Producer(ch chan int) {
+func Production(jobs chan<- int, wg *sync.WaitGroup) {
 
-	for i := 0; i <= 5; i++ {
+	defer wg.Done()
 
-		fmt.Println("Produced:", i)
-		ch <- i
+	for i := 1; i <= 10; i++ {
+
+		fmt.Println("Production:_", i)
+
+		jobs <- i
+
+		time.Sleep(time.Second * 2)
+
 	}
-	close(ch)
+	close(jobs)
 
 }
-func Counsumer(ch chan int) {
 
-	for value := range ch {
+func Consumed(jobs <-chan int, wg *sync.WaitGroup) {
+	defer wg.Done()
 
-		fmt.Println("Cousmed", value)
+	for job := range jobs {
+		fmt.Println("Consumed :__", job)
+
+		time.Sleep(time.Second * 2)
+
 	}
 
 }
+
 func main() {
 
-	ch := make(chan int)
+	jobs := make(chan int, 5)
 
-	go Producer(ch)
+	var wg sync.WaitGroup
 
-	Counsumer(ch)
+	wg.Add(1)
 
-	fmt.Println("Processing completed")
+	go Production(jobs, &wg)
 
+	wg.Add(1)
+	go Consumed(jobs, &wg)
+
+	wg.Wait()
+
+	fmt.Println("All jobs Copleted")
 }
