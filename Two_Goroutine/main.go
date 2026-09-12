@@ -5,8 +5,7 @@ import (
 	"sync"
 )
 
-func even(wg *sync.WaitGroup) {
-
+func Even(wg *sync.WaitGroup) {
 	defer wg.Done()
 
 	for i := 2; i <= 10; i++ {
@@ -16,7 +15,6 @@ func even(wg *sync.WaitGroup) {
 }
 
 func Odd(wg *sync.WaitGroup) {
-
 	defer wg.Done()
 
 	for i := 1; i <= 9; i++ {
@@ -24,16 +22,18 @@ func Odd(wg *sync.WaitGroup) {
 	}
 
 }
-
 func main() {
 
 	var wg sync.WaitGroup
 
 	wg.Add(2)
 
-	go even(&wg)
+	go Even(&wg)
+
 	go Odd(&wg)
 
 	wg.Wait()
-	fmt.Println("main completed")
+
+	fmt.Println("Main Function completed")
+
 }
