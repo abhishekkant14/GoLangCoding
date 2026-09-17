@@ -25,7 +25,7 @@ func Odd(wg *sync.WaitGroup) {
 func main() {
 
 	var wg sync.WaitGroup
-
+	
 	wg.Add(2)
 
 	go Even(&wg)
