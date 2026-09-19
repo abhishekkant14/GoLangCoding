@@ -9,7 +9,9 @@ func CountVowels(str string) int {
 	for _, ch := range str {
 
 		if ch == 'a' || ch == 'e' || ch == 'i' ||
+
 			ch == 'o' || ch == 'u' ||
+
 			ch == 'A' || ch == 'E' || ch == 'I' ||
 			ch == 'O' || ch == 'U' {
 			count++
@@ -21,10 +23,7 @@ func CountVowels(str string) int {
 }
 func main() {
 
-	name1 := "Abhishek"
-	name := "Arpit"
-
-	fmt.Println(CountVowels(name1))
-	fmt.Println(CountVowels(name))
+	fmt.Println(CountVowels("Abhishek"))
+	fmt.Println(CountVowels("Arpit Mishra"))
 
 }
